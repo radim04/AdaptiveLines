@@ -2,21 +2,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
   <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
   <script language="javascript" type="text/javascript" src="libraries/g.js"></script>
   <script language="javascript" type="text/javascript" src="Line.js"></script>
   <script language="javascript" type="text/javascript" src="LineVertex.js"></script>
-  <script language="javascript" type="text/javascript" src="AdaptiveLines.js"></script>
-  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
   <script language="javascript" type="text/javascript" src="/libraries/g.js"></script>
-
-  <!-- This line removes any default padding and style.
-       You might only need one of these values set. -->
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsfeat/0.0.8/jsfeat-min.js"></script>
   <style> body { padding: 0; margin: 0; } </style>
 </head>
-
 <body>
+  <script src="AdaptiveLines.js"></script>
+  <p>Blur Size: <input type="range" id="blurSize" value="30"></p>
+  <p>Low Threshold: <input type="range" id="lowThreshold" value="15"></p>
+  <p>High Threshold: <input type="range" id="highThreshold" value="25"></p>
 </body>
 </html>
