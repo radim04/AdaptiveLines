@@ -2,7 +2,7 @@ var lines = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(100);
+  background(255);
   initialize();
 }
 

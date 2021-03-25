@@ -10,11 +10,11 @@ class Line {
       var pnt = path.commands[i];
       var lineVertex = new LineVertex(pnt.x, pnt.y);
       this.vertices.push(lineVertex);
-    }  
+    }
   }
   display() {
     strokeWeight(0.1);
-    stroke(255);
+    stroke(0);
     beginShape();
     for(var i=0; i<this.vertices.length; i++) {
       vertex(this.vertices[i].pos.x, this.vertices[i].pos.y);
