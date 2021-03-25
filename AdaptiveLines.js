@@ -18,3 +18,6 @@ function initialize() {
     lines.push(l);
   }
 }
+
+function mousePressed() {
+}
