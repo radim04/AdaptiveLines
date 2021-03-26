@@ -1,7 +1,9 @@
+const toolbarWidth = 150;
 var lines = [];
 var img;
 var buffer;
 var result;
+var toolbar;
 
 function preload() {
   img = loadImage('data/dali.jpg');
@@ -10,25 +12,18 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
+  toolbar = new Toolbar(0, 0, toolbarWidth);
   buffer = new jsfeat.matrix_t(img.width, img.height, jsfeat.U8C1_t);
   img.loadPixels();
 }
 
 function draw() {
-  var blurSize = select('#blurSize').elt.value;
-  var lowThreshold = select('#lowThreshold').elt.value;
-  var highThreshold = select('#highThreshold').elt.value;
-
-  blurSize = map(blurSize, 0, 100, 1, 12);
-  lowThreshold = map(lowThreshold, 0, 100, 0, 255);
-  highThreshold = map(highThreshold, 0, 100, 0, 255);
-
   jsfeat.imgproc.grayscale(img.pixels, img.width, img.height, buffer);
-  jsfeat.imgproc.gaussian_blur(buffer, buffer, blurSize, 0);
-  jsfeat.imgproc.canny(buffer, buffer, lowThreshold, highThreshold);
+  jsfeat.imgproc.gaussian_blur(buffer, buffer, toolbar.blurSize(), 0);
+  jsfeat.imgproc.canny(buffer, buffer, toolbar.lowThreshold(), toolbar.highThreshold());
 
   result = jsfeatToP5(buffer, result);
-  image(result, 0, 0, img.width, img.height);
+  image(result, toolbarWidth, 0, img.width, img.height);
   /*
   for(var i=0; i<lines.length; i++) {
     lines[i].display();
