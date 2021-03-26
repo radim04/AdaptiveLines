@@ -23,7 +23,7 @@ function draw() {
   jsfeat.imgproc.canny(buffer, buffer, toolbar.lowThreshold(), toolbar.highThreshold());
 
   result = jsfeatToP5(buffer, result);
-  image(result, toolbarWidth, 0, img.width, img.height);
+  image(result, toolbarWidth, 0);
   /*
   for(var i=0; i<lines.length; i++) {
     lines[i].display();
